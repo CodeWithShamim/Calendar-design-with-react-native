@@ -5,7 +5,7 @@ import Arrow from "./Arrow";
 
 const CalendarPicker = () => {
   const [date, setDate] = useState(new Date());
-  const [pressedDate, setPressedDate] = useState(new Date());
+  const [pressedDate, setPressedDate] = useState({});
 
   console.log(pressedDate);
 
@@ -28,25 +28,6 @@ const CalendarPicker = () => {
         }
         hideExtraDays={true}
         enableSwipeMonths={true}
-        theme={{
-          backgroundColor: "#ffffff",
-          calendarBackground: "#ffffff",
-          textSectionTitleColor: "#000000",
-          selectedDayBackgroundColor: "#00adf5",
-          selectedDayTextColor: "#00adf5",
-          todayTextColor: "#00adf5",
-          dayTextColor: "#000000",
-          dotColor: "#00adf5",
-          textDayFontFamily: "monospace",
-          textMonthFontFamily: "monospace",
-          textDayHeaderFontFamily: "monospace",
-          textDayFontWeight: "bold",
-          textMonthFontWeight: "bold",
-          textDayHeaderFontWeight: "500",
-          textDayFontSize: 18,
-          textMonthFontSize: 18,
-          textDayHeaderFontSize: 18,
-        }}
       />
     </View>
   );
@@ -62,7 +43,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 20,
-    fontWeight: "bold",
     color: "#000000",
+    fontFamily: "Roboto-Bold",
   },
 });
