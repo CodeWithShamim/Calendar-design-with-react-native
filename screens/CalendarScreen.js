@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import moment from "moment";
 import CalendarPicker from "../components/CalendarPicker";
 import Colors from "../constants/Colors";
 import { useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 const CalendarScreen = () => {
   const [currentDate, setCurrentDate] = useState({});
@@ -14,18 +15,20 @@ const CalendarScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContent}>
-        <ImageBackground
+        <LinearGradient
           style={styles.bgImage}
-          source={require("../assets/images/bg.jpg")}
+          colors={[Colors.primary500, Colors.secondary]}
         >
           <View style={styles.headerInnerContent}>
             <Text style={styles.headerLeftDayText}>{currentDate.day}</Text>
             <View style={styles.headerRightContainer}>
-              <Text style={styles.headerRightDayText}>{currentDate.month}</Text>
+              <Text style={styles.headerRightDayText}>
+                {moment(currentDate.month, "M").format("MMMM")}
+              </Text>
               <Text style={styles.headerRightDayText}>{currentDate.year}</Text>
             </View>
           </View>
-        </ImageBackground>
+        </LinearGradient>
       </View>
 
       {/* ______________Calendar picker______________ */}
@@ -37,7 +40,7 @@ const CalendarScreen = () => {
         <Text style={styles.bottomTimeText}>
           {moment().format("hA")} - Developer Conference
         </Text>
-        <Text>Metro Hall</Text>
+        <Text style={{ fontFamily: "Roboto-ThinItalic" }}>Metro Hall</Text>
       </View>
     </View>
   );
@@ -73,15 +76,18 @@ const styles = StyleSheet.create({
   bgImage: {
     width: "100%",
     height: 200,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    // borderBottomLeftRadius: 30,
+    // borderBottomRightRadius: 100,
   },
-  bottomContent: {},
+  bottomContent: {
+    padding: 20,
+  },
   bottomDateText: {
+    fontFamily: "Roboto-Regular",
     fontSize: 30,
   },
   bottomTimeText: {
-    fontWeight: "bold",
+    fontFamily: "Roboto-Medium",
     marginVertical: 7,
   },
 });
