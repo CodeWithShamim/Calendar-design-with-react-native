@@ -5,9 +5,9 @@ const Arrow = ({ direction }) => {
   return (
     <View>
       {direction === "left" ? (
-        <AntDesign name="leftcircleo" size={24} color="#ccc" />
+        <AntDesign name="leftcircleo" size={28} color="#ccc" />
       ) : (
-        <AntDesign name="rightcircleo" size={24} color="#ccc" />
+        <AntDesign name="rightcircleo" size={28} color="#ccc" />
       )}
     </View>
   );
