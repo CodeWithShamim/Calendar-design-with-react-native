@@ -16,10 +16,14 @@ export default function App() {
     return <Text>Loading...</Text>;
   }
 
+  const handleCurrentDate = (pressedDate) => {
+    console.log(pressedDate);
+  };
+
   return (
     <>
       <StatusBar style="light" />
-      <CalendarScreen></CalendarScreen>
+      <CalendarScreen onPress={handleCurrentDate}></CalendarScreen>
     </>
   );
 }

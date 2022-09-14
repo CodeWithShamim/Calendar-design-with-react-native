@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import moment from "moment";
 import CalendarPicker from "../components/CalendarPicker";
 
-const CalendarScreen = () => {
+const CalendarScreen = ({ onPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContent}>
@@ -13,7 +13,7 @@ const CalendarScreen = () => {
       </View>
 
       {/* ______________date time picker______________ */}
-      <CalendarPicker></CalendarPicker>
+      <CalendarPicker onPress={onPress}></CalendarPicker>
       {/* ______________bottom content________________ */}
       <View style={styles.bottomContent}>
         <Text style={styles.bottomDateText}>{moment().format("DD, MMMM")}</Text>
