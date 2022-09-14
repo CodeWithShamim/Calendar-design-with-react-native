@@ -4,7 +4,7 @@ import CalendarScreen from "./screens/CalendarScreen";
 export default function App() {
   return (
     <>
-      <StatusBar style="light" backgroundColor="red" />
+      <StatusBar style="light" />
       <CalendarScreen></CalendarScreen>
     </>
   );
