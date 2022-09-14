@@ -16,6 +16,7 @@ const CalendarScreen = () => {
     <View style={styles.container}>
       <View style={styles.headerContent}>
         <LinearGradient
+          end={{ x: 1, y: 0.5 }}
           style={styles.bgImage}
           colors={[Colors.primary500, Colors.secondary]}
         >
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     borderRightColor: Colors.white,
   },
   headerRightDayText: {
-    fontSize: 33,
+    fontSize: 28,
     fontFamily: "Roboto-Bold",
     paddingLeft: 34,
     color: Colors.white,

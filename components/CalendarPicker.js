@@ -68,9 +68,6 @@ const CalendarPicker = ({ onPress }) => {
           textDayFontSize: 16,
           textMonthFontSize: 16,
           textDayHeaderFontSize: 15,
-          "stylesheet.day.period": {
-            today: { backgroundColor: "red", borderRadius: 32 / 2 },
-          },
         }}
       />
     </View>
