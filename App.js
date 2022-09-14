@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import CalendarScreen from "./screens/CalendarScreen";
 import { useFonts } from "expo-font";
-import { Text } from "react-native";
+import { View, Text } from "react-native";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,17 +13,17 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Loading...</Text>
+      </View>
+    );
   }
-
-  const handleCurrentDate = (pressedDate) => {
-    console.log(pressedDate);
-  };
 
   return (
     <>
       <StatusBar style="light" />
-      <CalendarScreen onPress={handleCurrentDate}></CalendarScreen>
+      <CalendarScreen></CalendarScreen>
     </>
   );
 }

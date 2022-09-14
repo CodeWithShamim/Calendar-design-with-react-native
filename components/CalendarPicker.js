@@ -6,7 +6,11 @@ import Colors from "../constants/Colors";
 
 const CalendarPicker = ({ onPress }) => {
   const [date, setDate] = useState(new Date());
-  const [pressedDate, setPressedDate] = useState({});
+  const [pressedDate, setPressedDate] = useState({
+    day: "16",
+    month: "09",
+    year: "2022",
+  });
 
   useLayoutEffect(() => {
     if (pressedDate) {
@@ -40,17 +44,17 @@ const CalendarPicker = ({ onPress }) => {
           },
         }}
         theme={{
-          backgroundColor: "#ffffff",
-          calendarBackground: "#ffffff",
-          textSectionTitleColor: "#000000",
+          backgroundColor: Colors.white,
+          calendarBackground: Colors.white,
+          textSectionTitleColor: Colors.black,
           textSectionTitleDisabledColor: "#d9e1e8",
           selectedDayBackgroundColor: Colors.primary700,
-          selectedDayTextColor: "#ffffff",
+          selectedDayTextColor: Colors.white,
           todayTextColor: Colors.primary700,
           dayTextColor: "#2d4150",
           textDisabledColor: "#d9e1e8",
           dotColor: Colors.primary700,
-          selectedDotColor: "#ffffff",
+          selectedDotColor: Colors.white,
           arrowColor: "orange",
           disabledArrowColor: "#d9e1e8",
           monthTextColor: "blue",
@@ -75,12 +79,12 @@ export default CalendarPicker;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 220,
+    marginTop: 20,
     marginHorizontal: 30,
   },
   headerText: {
     fontSize: 20,
-    color: "#000000",
+    color: Colors.black,
     fontFamily: "Roboto-Bold",
   },
 });
